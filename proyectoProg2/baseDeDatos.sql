@@ -11,11 +11,11 @@ createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 INSERT INTO users (id, usuario, email, password, createdAT, updatedAt) VALUES
-(DEFAULT, "Keni Soler", "ksoler@udesa.edu.ar", "123456789", DEFAULT, DEFAULT),
-(DEFAULT, "Federico Basavilbaso", "fbasavilbaso@udesa.edu.ar", "987654321", DEFAULT, DEFAULT),
-(DEFAULT, "Salvador de los Heros", "sdelosheros@udesa.edu.ar", "192837465", DEFAULT, DEFAULT),
-(DEFAULT, "Brian Gomez", "bgomezrangel@udesa.edu.ar", "567891234", DEFAULT, DEFAULT),
-(DEFAULT, "Luis Navas", "lnavas@udesa.edu.ar", "112233445", DEFAULT, DEFAULT);
+(DEFAULT, "Keni Soler", "ksoler@udesa.edu.ar", "1234", DEFAULT, DEFAULT),
+(DEFAULT, "Federico Basavilbaso", "fbasavilbaso@udesa.edu.ar", "9876", DEFAULT, DEFAULT),
+(DEFAULT, "Salvador de los Heros", "sdelosheros@udesa.edu.ar", "1928", DEFAULT, DEFAULT),
+(DEFAULT, "Brian Gomez", "bgomezrangel@udesa.edu.ar", "5678", DEFAULT, DEFAULT),
+(DEFAULT, "Luis Navas", "lnavas@udesa.edu.ar", "1122", DEFAULT, DEFAULT);
 
 CREATE TABLE products (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,

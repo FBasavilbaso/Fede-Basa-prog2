@@ -15,6 +15,15 @@ module.exports = (sequelize, dataTypes) => {
         descripcion: {
             type: dataTypes.STRING
         },
+        usuario_id: {
+            type: dataTypes.INTEGER
+        },
+        createdAt: {
+            type: dataTypes.DATE
+        },
+        updatedAt: {
+            type: dataTypes.DATE
+        }
     };
     let config = {
         tableName: 'products',

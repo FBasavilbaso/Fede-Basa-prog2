@@ -14,6 +14,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         password: {
             type: dataTypes.STRING
+        },
+        createdAt: {
+            type: dataTypes.DATE
+        },
+        updatedAt: {
+            type: dataTypes.DATE
         }
     };
     let config = {
