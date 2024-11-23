@@ -1,6 +1,11 @@
+const db = require("../database/models");
+const op = db.Sequelize.Op;
+const products = db.Product;
+
+
 const productsController = {
-    products: function(req, res){
-        return res.render(`index`);
+        products: function(req, res){
+            return res.render(`homePage`);
     },
 
     productDetail: function(req, res){
