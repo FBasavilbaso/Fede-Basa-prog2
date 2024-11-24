@@ -7,13 +7,16 @@ const usersController = {
     showRegister: function(req, res){
         return res.render(`register`)
     },
-    register: function(req, res){
-        
-    },
 
     showLogin: function(req, res){
         return res.render(`login`);
     },
+
+
+    register: function(req, res){
+        
+    },
+
 
     login: function(req, res){
 
@@ -22,6 +25,10 @@ const usersController = {
     profile: function(req, res){
         return res.render(`profileUser`)
     },
+
+    logout: function(req, res){
+        
+    }
 
 }
 module.exports = usersController;
