@@ -1,4 +1,5 @@
 const db = require("../database/models");
+const bcryptjs = require('bcryptjs');
 const op = db.Sequelize.Op;
 const users = db.User;
 
@@ -13,7 +14,10 @@ const usersController = {
 
     profile: function(req, res){
         return res.render(`profileUser`)
-    }
-};
+    },
 
+    loginPost: function(req, res){
+
+    },
+}
 module.exports = usersController;
