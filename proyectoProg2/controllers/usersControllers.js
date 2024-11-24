@@ -4,20 +4,24 @@ const op = db.Sequelize.Op;
 const users = db.User;
 
 const usersController = {
+    showRegister: function(req, res){
+        return res.render(`register`)
+    },
     register: function(req, res){
-        return res.render(`register`);
+        
+    },
+
+    showLogin: function(req, res){
+        return res.render(`login`);
     },
 
     login: function(req, res){
-        return res.render(`login`);
+
     },
 
     profile: function(req, res){
         return res.render(`profileUser`)
     },
 
-    loginPost: function(req, res){
-
-    },
 }
 module.exports = usersController;
