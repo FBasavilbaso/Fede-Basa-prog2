@@ -15,7 +15,7 @@ const usersController = {
         if(req.session.user != undefined){
             return res.redirect("/products")
         }else{
-            return res.render(login);
+            return res.render(`login`);
         }
     },
 
