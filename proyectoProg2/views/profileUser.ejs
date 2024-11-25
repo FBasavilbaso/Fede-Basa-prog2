@@ -13,8 +13,19 @@
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Datos</h2>
+				<p class="products-title">Nombre de usuario: <%= user.usuario %></p>
+				<p class="products-title">Email usuario: <%= user.email %></p>
+				<p class="products-title">Created at: <%= user.createdAt %></p>
+				<% for( let i = 0; i < user.product.length; i++ ) { %>
+					<p class="products-title">Producto agregado: <%= user.product[i].producto %></p>
+					<p class="products-title">Imagen del producto %></p>
+					<figure class="product-box_image">
+						 <img src="/images/dispositivos/<%= user.product[i].imagen %>" alt="" class="product-detail-img"> 
+					</figure>
+					<p class="products-title">Created at: <%= user.product[i].createdAt %></p>
+				<% } %>
 			</div>
-			
+				
         </div>
     </div>
 

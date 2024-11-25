@@ -75,8 +75,21 @@ const usersController = {
         }
     },
 
-    profile: function (req, res) {
-        return res.render(`profileUser`)
+    profile: function(req, res){
+        const id = req.params.id;
+        let filtro = {
+            include: [
+                {association: "product"}
+            ]
+        }
+        users.findByPk(id, filtro)
+        .then(function(results){
+
+            return res.render(`profileUser`, {user: results})
+        })
+        .catch(function(e){
+            return console.log(e);
+        })
     },
 
     logout: function(req, res){
