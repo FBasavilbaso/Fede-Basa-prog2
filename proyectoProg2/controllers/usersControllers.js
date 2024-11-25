@@ -29,6 +29,8 @@ const usersController = {
     logout: function(req, res){
         
     }
+    
+    
 
 }
 module.exports = usersController;
