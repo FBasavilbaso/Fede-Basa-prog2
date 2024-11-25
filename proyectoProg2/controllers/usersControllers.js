@@ -75,8 +75,9 @@ const usersController = {
         return res.render(`profileUser`)
     },
 
-    logout: function (req, res) {
-
+    logout: function(req, res){
+        req.session.destroy();
+        return res.redirect("/products");
     }
 
 
