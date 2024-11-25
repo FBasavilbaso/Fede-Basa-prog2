@@ -22,7 +22,19 @@ const productsController = {
     },
 
     productDetail: function(req, res){
-        return res.render(`product`);
+        const id = req.params.id;
+        let filtro = {
+            include : [
+                {association: "user"}
+            ]
+        }
+        products.findByPk(id, filtro)
+        .then(function(results){
+            return res.render(product, {product: results});
+        })
+        .catch(function(e) {
+            return console.log(e);
+        });
     },
 
     productAdd: function(req, res){
