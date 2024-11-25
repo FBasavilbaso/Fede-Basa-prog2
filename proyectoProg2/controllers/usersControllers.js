@@ -4,21 +4,20 @@ const op = db.Sequelize.Op;
 const users = db.User;
 
 const usersController = {
-    showregister: function(req, res){
+    showRegister: function(req, res){
         if(req.session.user != undefined){
             return res.redirect("/products")
         }else{
             return res.render('register');
         }
     },
-    showlogin: function(req, res){
+    showLogin: function(req, res){
         if(req.session.user != undefined){
             return res.redirect("/products")
         }else{
             return res.render(login);
         }
     },
-
 
     register: function (req, res) {
         let form = req.body;

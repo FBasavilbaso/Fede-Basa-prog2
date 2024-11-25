@@ -38,12 +38,15 @@ const productsController = {
     },
 
     showFormAdd: function(req, res){
-        return res.render("product-add")
+        if(req.session.user == undefined){
+            return res.redirect("/users/login")
+        }else{
+            return res.render(`product-add`);
+        }
     },
 
     productAdd: function(req, res){
         let newProduct = req.body;
-        let filtro = {include: [{association: "user"}]}
         if(newProduct.imagen == ""){
             return res.send("Debe insertar la url de la imagen del producto agregado");
         }else if (newProduct.producto == ""){
