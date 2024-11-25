@@ -29,11 +29,11 @@
 							<div class="data">
 								<p class="user">
 								<% if (locals.user) { %>
-									<strong> <a href="/users/profile/<%= product.user.id %>"> <%= product.user.usuario %>: </a> </strong>
+									<strong><a href="/users/profile/<%= product.user.id %>"><%= product.user.id %></a> </strong>
 									Creacion del producto: <%= product.createdAt %>
 								   Publicacion del producto: <%= product.updatedAt %></p>
 								<% }else { %>
-								<strong> <%= product.user.usuario %>: </a> </strong>
+								<strong><%= product.user.usuario %></strong>
 								 Creacion del producto: <%= product.createdAt %>
 								Publicacion del producto: <%= product.updatedAt %></p>
 								<% } %>

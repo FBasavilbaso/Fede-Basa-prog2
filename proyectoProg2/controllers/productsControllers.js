@@ -70,6 +70,10 @@ const productsController = {
 
     search: function(req, res){
         const search = req.query.search;
+        if(search == ""){
+            return res.render('search-results', {product: []});
+        }
+        
         let filtro = {
             where: {producto: {[op.like]: `%${search}%`}},
             include: [
@@ -78,6 +82,7 @@ const productsController = {
         }
         products.findAll(filtro)
         .then(function(results){
+          
             return res.render('search-results', {product: results});
         })
         .catch(function(e) {
