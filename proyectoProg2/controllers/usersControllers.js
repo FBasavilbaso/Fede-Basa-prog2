@@ -4,12 +4,19 @@ const op = db.Sequelize.Op;
 const users = db.User;
 
 const usersController = {
-    showRegister: function (req, res) {
-        return res.render(`register`)
+    showregister: function(req, res){
+        if(req.session.user != undefined){
+            return res.redirect("/products")
+        }else{
+            return res.render('register');
+        }
     },
-
-    showLogin: function (req, res) {
-        return res.render(`login`);
+    showlogin: function(req, res){
+        if(req.session.user != undefined){
+            return res.redirect("/products")
+        }else{
+            return res.render(login);
+        }
     },
 
 
