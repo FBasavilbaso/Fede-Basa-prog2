@@ -30,7 +30,7 @@ const productsController = {
         }
         products.findByPk(id, filtro)
         .then(function(results){
-            return res.render(product, {product: results});
+            return res.render('product', {product: results});
         })
         .catch(function(e) {
             return console.log(e);
