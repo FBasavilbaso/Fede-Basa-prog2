@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes){
-    let alias = "User";
+    let alias = "Product";
 
     let cols = {
         id: {
@@ -7,14 +7,17 @@ module.exports = function(sequelize, dataTypes){
             primaryKey: true,
             autoIncrement: true,
         },
-        email: {
+        imagen: {
             type: dataTypes.STRING,
         },
-        usuario: {
+        producto: {
             type: dataTypes.STRING,
         },
-        password: {
-            type: dataTypes.STRING,
+        descripcion: {
+            type: dataTypes.STRING(600),
+        },
+        usuarioId: {
+            type: dataTypes.INTEGER,
         },
         createdAt: {
             type: dataTypes.DATE,
@@ -25,17 +28,17 @@ module.exports = function(sequelize, dataTypes){
     };
 
     let config = {
-        tableName: "users",
+        tableName: "products",
         timestamps: false,
         underscored: false,
     };
 
-    const User = sequelize.define(alias, cols, config);
-    User.associate = function(models){
-        User.hasMany(models.Product, {
-            as: "product",
-            foreignKey: "usuarioId"
+    const Product = sequelize.define(alias, cols, config);
+    Product.associate = function(models){
+        Product.belongsTo(models.User, {
+            as: "user",
+            foreignKey: "usuarioId",
         });
     };
-    return User;
+    return Product;
 };
