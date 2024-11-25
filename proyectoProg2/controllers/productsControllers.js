@@ -30,8 +30,23 @@ const productsController = {
     },
 
     search: function(req, res){
-        return res.render(`search-results`);
+        const search = req.query.search;
+        let filtro = {
+            where: {producto: {[op.like]: `%${search}%`}},
+            include: [
+                {association: "user"}],
+              order:[["createdAt", "DESC"]],
+        }
+        products.findAll(filtro)
+        .then(function(results){
+            return res.render('search-results', {product: results});
+        })
+        .catch(function(e) {
+            return console.log(e);
+         });
     }
 };
 
 module.exports = productsController;
+
+
