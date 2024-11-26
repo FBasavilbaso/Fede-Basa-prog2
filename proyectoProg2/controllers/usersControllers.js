@@ -54,9 +54,6 @@ const usersController = {
 
 
     login: function(req, res){
-        if(req.session.user !== undefined){
-            return res.redirect("/products")
-        }else {
             let form = req.body;
             let filtrado = {
             where:{email: form.email}
@@ -78,7 +75,6 @@ const usersController = {
             .catch(function(e){
             return console.log(e);
             })
-        }
     },
 
     profile: function(req, res){
